@@ -38,8 +38,8 @@ class CFW500ModbusNode(Node):
         Each reading is scaled appropriately before publishing.
         """
         try:
-            # Read frequency register (address 1000)
-            response = self.client.read_holding_registers(1000, 1)
+            # Read frequency register (address P0005)
+            response = self.client.read_holding_registers(5, 1)
             if not response.isError():
                 frequency = response.registers[0] / 100.0  # Scale adjustment
                 self.publish_data(self.freq_publisher, frequency, "Frequency")
