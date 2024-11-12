@@ -10,7 +10,7 @@ class CFW500ModbusNode(Node):
         # Set up Modbus RTU client configuration
         # Configures the Modbus client for communication with a device on /dev/ttyUSB0
         # using a baud rate of 9600 and a timeout of 1 second.
-        self.client = ModbusClient(port='/dev/ttyUSB0', baudrate=9600, timeout=1)
+        self.client = ModbusClient(port='/dev/ttyUSB0', baudrate=19200, timeout=1)
 
         # Attempt connection to the inverter device via Modbus
         if not self.client.connect():
