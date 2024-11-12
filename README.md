@@ -20,13 +20,13 @@
 
 ## Installation
 
-1. Clone this repository into your ROS 2 workspace:
+### Clone this repository into your ROS 2 workspace:
 
-   ```bash
-   cd ~/dev_ws/src
-   git clone https://github.com/yourusername/modbus_cfw500.git
+
+     cd ~/dev_ws/src
+     git clone https://github.com/yourusername/modbus_cfw500.git
    
-2. Install dependencies:
+### Install dependencies:
 
 The package depends on rclpy, std_msgs, and pymodbus. You can install the necessary dependencies using:
 
@@ -43,7 +43,7 @@ Source your workspace:
     
     source ~/dev_ws/install/setup.bash
 
-Usage
+## Usage
 
 After building and sourcing your workspace, you can launch the node using the provided launch file:
 
@@ -56,7 +56,7 @@ This will start the cfw500_modbus_node and begin publishing data to the followin
     /cfw500_motor_current
     /cfw500_output_voltage
 
-Viewing Topics
+## Viewing Topics
 
 You can view the topics being published using the following command:
 
@@ -69,7 +69,7 @@ To see the values published to a specific topic, use:
     ros2 topic echo /cfw500_motor_current
     ros2 topic echo /cfw500_output_voltage
 
-Configuration
+## Configuration
 
 You can modify the serial port, baudrate, and other parameters for the Modbus connection by editing the cfw500_modbus_node.py file.
 
