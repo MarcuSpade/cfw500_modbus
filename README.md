@@ -34,7 +34,7 @@ pip install pymodbus
 
 And then install ROS 2 dependencies by building the workspace:
 
-    +
+  
      cd ~/dev_ws/src
      git clone https://github.com/yourusername/modbus_cfw500.git
 
