@@ -1,0 +1,237 @@
+\doxysection{cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node Class Reference}
+\hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode}{}\label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+Inheritance diagram for cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a69a535034bafd33c2215d9131b8686b7}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a5c649085044b3e3b321eab2d51f9c934}{read\+\_\+and\+\_\+publish\+\_\+registers}} (self)
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_abf1b60c8eb1336ce4304c732fb0d1b1e}{publish\+\_\+data}} (self, publisher, data, label)
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_ad52b0407d66a9d21bb37efe586e3780a}{destroy}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_aa51b29c612084729cee51a2d9db82ec3}{client}} = Modbus\+Client(port=\textquotesingle{}/dev/tty\+USB0\textquotesingle{}, baudrate=9600, timeout=1)
+\item 
+int \mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_afe2508fe9b44a63e38ce3b3f3eb8fcb6}{device\+\_\+id}} = 1
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a68aeb09d9b3e1e94cb36dd2e02887634}{freq\+\_\+publisher}} = self.\+create\+\_\+publisher(Float32, \textquotesingle{}cfw500\+\_\+frequency\textquotesingle{}, 10)
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a7304a74a748cf7fda38242305d3d3edc}{vel\+\_\+publisher}} = self.\+create\+\_\+publisher(Float32, \textquotesingle{}cfw500\+\_\+output\+\_\+speed\textquotesingle{}, 10)
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a0cf58a631879d1f504dc55f831daa54e}{curr\+\_\+publisher}} = self.\+create\+\_\+publisher(Float32, \textquotesingle{}cfw500\+\_\+motor\+\_\+current\textquotesingle{}, 10)
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a3a1bfb73a1234ef0c7a842c87d270f74}{volt\+\_\+publisher}} = self.\+create\+\_\+publisher(Float32, \textquotesingle{}cfw500\+\_\+output\+\_\+voltage\textquotesingle{}, 10)
+\item 
+float \mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a247003af56ba59a2acb076d4cb9b42dd}{timer\+\_\+period}} = 1.\+0
+\item 
+\mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_ad3b83d8e2c620353bee592ce0db1103a}{timer}} = self.\+create\+\_\+timer(self.\+timer\+\_\+period, self.\+read\+\_\+and\+\_\+publish\+\_\+registers)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a69a535034bafd33c2215d9131b8686b7}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a69a535034bafd33c2215d9131b8686b7} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{def\ }\_\_init\_\_(self):}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ super().\_\_init\_\_(\textcolor{stringliteral}{'cfw500\_modbus\_node'})}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Set\ up\ Modbus\ RTU\ client\ configuration}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Configures\ the\ Modbus\ client\ for\ communication\ with\ a\ device\ on\ /dev/ttyUSB0}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ using\ a\ baud\ rate\ of\ 9600\ and\ a\ timeout\ of\ 1\ second.}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ self.client\ =\ ModbusClient(port=\textcolor{stringliteral}{'/dev/ttyUSB0'},\ baudrate=9600,\ timeout=1)}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Attempt\ connection\ to\ the\ inverter\ device\ via\ Modbus}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ self.client.connect():}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ self.get\_logger().error(\textcolor{stringliteral}{'Could\ not\ connect\ to\ Modbus\ device'})}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{raise}\ Exception(\textcolor{stringliteral}{"{}Modbus\ connection\ failed"{}})}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Set\ device\ ID\ (or\ Modbus\ unit\ ID)\ for\ the\ inverter}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ self.device\_id\ =\ 1}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ self.client.unit\_id\ =\ self.device\_id\ \ \textcolor{comment}{\#\ Assigns\ unit\ ID\ for\ addressing\ the\ device}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Initialize\ ROS\ 2\ publishers\ for\ each\ Modbus\ register}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ These\ topics\ will\ publish\ frequency,\ output\ speed,\ motor\ current,\ and\ output\ voltage.}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ self.freq\_publisher\ =\ self.create\_publisher(Float32,\ \textcolor{stringliteral}{'cfw500\_frequency'},\ 10)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ self.vel\_publisher\ =\ self.create\_publisher(Float32,\ \textcolor{stringliteral}{'cfw500\_output\_speed'},\ 10)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ self.curr\_publisher\ =\ self.create\_publisher(Float32,\ \textcolor{stringliteral}{'cfw500\_motor\_current'},\ 10)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ self.volt\_publisher\ =\ self.create\_publisher(Float32,\ \textcolor{stringliteral}{'cfw500\_output\_voltage'},\ 10)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Sets\ the\ reading\ frequency\ to\ 1\ second\ intervals}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ self.timer\_period\ =\ 1.0\ \ \textcolor{comment}{\#\ 1\ second\ period}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ self.timer\ =\ self.create\_timer(self.timer\_period,\ self.read\_and\_publish\_registers)}
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_ad52b0407d66a9d21bb37efe586e3780a}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!destroy@{destroy}}
+\index{destroy@{destroy}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_ad52b0407d66a9d21bb37efe586e3780a} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+destroy (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Safely closes the Modbus client connection and calls the superclass
+destroy method for cleanup.
+\end{DoxyVerb}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{def\ }destroy(self):}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00085\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Safely\ closes\ the\ Modbus\ client\ connection\ and\ calls\ the\ superclass}}
+\DoxyCodeLine{00086\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ destroy\ method\ for\ cleanup.}}
+\DoxyCodeLine{00087\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ self.client.close()}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ super().destroy()}
+\DoxyCodeLine{00090\ }
+
+\end{DoxyCode}
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_abf1b60c8eb1336ce4304c732fb0d1b1e}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!publish\_data@{publish\_data}}
+\index{publish\_data@{publish\_data}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{publish\_data()}{publish\_data()}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_abf1b60c8eb1336ce4304c732fb0d1b1e} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+publish\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{publisher}{, }\item[{}]{data}{, }\item[{}]{label}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Logs and publishes data to a specified ROS 2 topic.
+
+Parameters:
+- publisher (Publisher): The ROS publisher to use.
+- data (float): The data to publish.
+- label (str): The label for logging purposes.
+\end{DoxyVerb}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{def\ }publish\_data(self,\ publisher,\ data,\ label):}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00071\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Logs\ and\ publishes\ data\ to\ a\ specified\ ROS\ 2\ topic.}}
+\DoxyCodeLine{00072\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00073\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Parameters:}}
+\DoxyCodeLine{00074\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ -\/\ publisher\ (Publisher):\ The\ ROS\ publisher\ to\ use.}}
+\DoxyCodeLine{00075\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ -\/\ data\ (float):\ The\ data\ to\ publish.}}
+\DoxyCodeLine{00076\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ -\/\ label\ (str):\ The\ label\ for\ logging\ purposes.}}
+\DoxyCodeLine{00077\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ self.get\_logger().info(f\textcolor{stringliteral}{"{}\{label\}:\ \{data\}"{}})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ msg\ =\ Float32()}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ msg.data\ =\ data}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ publisher.publish(msg)}
+\DoxyCodeLine{00082\ }
+
+\end{DoxyCode}
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a5c649085044b3e3b321eab2d51f9c934}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!read\_and\_publish\_registers@{read\_and\_publish\_registers}}
+\index{read\_and\_publish\_registers@{read\_and\_publish\_registers}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{read\_and\_publish\_registers()}{read\_and\_publish\_registers()}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a5c649085044b3e3b321eab2d51f9c934} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+read\+\_\+and\+\_\+publish\+\_\+registers (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Reads specific Modbus registers and publishes the data to ROS 2 topics.
+Each reading is scaled appropriately before publishing.
+\end{DoxyVerb}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{def\ }read\_and\_publish\_registers(self):}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00037\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Reads\ specific\ Modbus\ registers\ and\ publishes\ the\ data\ to\ ROS\ 2\ topics.}}
+\DoxyCodeLine{00038\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Each\ reading\ is\ scaled\ appropriately\ before\ publishing.}}
+\DoxyCodeLine{00039\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Read\ frequency\ register\ (address\ 1000)}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ self.client.read\_holding\_registers(1000,\ 1)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ response.isError():}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frequency\ =\ response.registers[0]\ /\ 100.0\ \ \textcolor{comment}{\#\ Scale\ adjustment}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.publish\_data(self.freq\_publisher,\ frequency,\ \textcolor{stringliteral}{"{}Frequency"{}})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Read\ output\ speed\ register\ (P0002,\ address\ 2)}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ self.client.read\_holding\_registers(2,\ 1)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ response.isError():}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\_speed\ =\ response.registers[0]\ /\ 100.0\ \ \textcolor{comment}{\#\ Scale\ adjustment}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.publish\_data(self.vel\_publisher,\ output\_speed,\ \textcolor{stringliteral}{"{}Output\ Speed"{}})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Read\ motor\ current\ register\ (P0003,\ address\ 3)}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ self.client.read\_holding\_registers(3,\ 1)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ response.isError():}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ motor\_current\ =\ response.registers[0]\ /\ 100.0\ \ \textcolor{comment}{\#\ Scale\ adjustment}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.publish\_data(self.curr\_publisher,\ motor\_current,\ \textcolor{stringliteral}{"{}Motor\ Current"{}})}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Read\ output\ voltage\ register\ (P0007,\ address\ 7)}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ self.client.read\_holding\_registers(7,\ 1)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ response.isError():}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output\_voltage\ =\ response.registers[0]\ /\ 100.0\ \ \textcolor{comment}{\#\ Scale\ adjustment}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.publish\_data(self.volt\_publisher,\ output\_voltage,\ \textcolor{stringliteral}{"{}Output\ Voltage"{}})}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{except}\ Exception\ \textcolor{keyword}{as}\ e:}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Logs\ any\ error\ encountered\ during\ Modbus\ register\ reading}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ self.get\_logger().error(f\textcolor{stringliteral}{"{}Error\ reading\ Modbus\ registers:\ \{str(e)\}"{}})}
+\DoxyCodeLine{00068\ \ \ \ \ }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_aa51b29c612084729cee51a2d9db82ec3}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!client@{client}}
+\index{client@{client}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_aa51b29c612084729cee51a2d9db82ec3} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+client = Modbus\+Client(port=\textquotesingle{}/dev/tty\+USB0\textquotesingle{}, baudrate=9600, timeout=1)}
+
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a0cf58a631879d1f504dc55f831daa54e}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!curr\_publisher@{curr\_publisher}}
+\index{curr\_publisher@{curr\_publisher}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{curr\_publisher}{curr\_publisher}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a0cf58a631879d1f504dc55f831daa54e} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+curr\+\_\+publisher = self.\+create\+\_\+publisher(Float32, \textquotesingle{}cfw500\+\_\+motor\+\_\+current\textquotesingle{}, 10)}
+
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_afe2508fe9b44a63e38ce3b3f3eb8fcb6}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!device\_id@{device\_id}}
+\index{device\_id@{device\_id}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{device\_id}{device\_id}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_afe2508fe9b44a63e38ce3b3f3eb8fcb6} 
+int cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+device\+\_\+id = 1}
+
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a68aeb09d9b3e1e94cb36dd2e02887634}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!freq\_publisher@{freq\_publisher}}
+\index{freq\_publisher@{freq\_publisher}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{freq\_publisher}{freq\_publisher}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a68aeb09d9b3e1e94cb36dd2e02887634} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+freq\+\_\+publisher = self.\+create\+\_\+publisher(Float32, \textquotesingle{}cfw500\+\_\+frequency\textquotesingle{}, 10)}
+
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_ad3b83d8e2c620353bee592ce0db1103a}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!timer@{timer}}
+\index{timer@{timer}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_ad3b83d8e2c620353bee592ce0db1103a} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+timer = self.\+create\+\_\+timer(self.\+timer\+\_\+period, self.\+read\+\_\+and\+\_\+publish\+\_\+registers)}
+
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a247003af56ba59a2acb076d4cb9b42dd}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!timer\_period@{timer\_period}}
+\index{timer\_period@{timer\_period}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{timer\_period}{timer\_period}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a247003af56ba59a2acb076d4cb9b42dd} 
+float cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+timer\+\_\+period = 1.\+0}
+
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a7304a74a748cf7fda38242305d3d3edc}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!vel\_publisher@{vel\_publisher}}
+\index{vel\_publisher@{vel\_publisher}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{vel\_publisher}{vel\_publisher}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a7304a74a748cf7fda38242305d3d3edc} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+vel\+\_\+publisher = self.\+create\+\_\+publisher(Float32, \textquotesingle{}cfw500\+\_\+output\+\_\+speed\textquotesingle{}, 10)}
+
+\Hypertarget{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a3a1bfb73a1234ef0c7a842c87d270f74}\index{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}!volt\_publisher@{volt\_publisher}}
+\index{volt\_publisher@{volt\_publisher}!cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode@{cfw500\_modbus.cfw500\_modbus\_node.CFW500ModbusNode}}
+\doxysubsubsection{\texorpdfstring{volt\_publisher}{volt\_publisher}}
+{\footnotesize\ttfamily \label{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode_a3a1bfb73a1234ef0c7a842c87d270f74} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+CFW500\+Modbus\+Node.\+volt\+\_\+publisher = self.\+create\+\_\+publisher(Float32, \textquotesingle{}cfw500\+\_\+output\+\_\+voltage\textquotesingle{}, 10)}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/cfw500\+\_\+modbus/cfw500\+\_\+modbus/\mbox{\hyperlink{cfw500__modbus__node_8py}{cfw500\+\_\+modbus\+\_\+node.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,37 @@
+\doxysection{cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node Namespace Reference}
+\hypertarget{namespacecfw500__modbus_1_1cfw500__modbus__node}{}\label{namespacecfw500__modbus_1_1cfw500__modbus__node}\index{cfw500\_modbus.cfw500\_modbus\_node@{cfw500\_modbus.cfw500\_modbus\_node}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcfw500__modbus_1_1cfw500__modbus__node_1_1CFW500ModbusNode}{CFW500\+Modbus\+Node}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacecfw500__modbus_1_1cfw500__modbus__node_a40157477392ccde01d8160406319c6a7}{main}} (args=None)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecfw500__modbus_1_1cfw500__modbus__node_a40157477392ccde01d8160406319c6a7}\index{cfw500\_modbus.cfw500\_modbus\_node@{cfw500\_modbus.cfw500\_modbus\_node}!main@{main}}
+\index{main@{main}!cfw500\_modbus.cfw500\_modbus\_node@{cfw500\_modbus.cfw500\_modbus\_node}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{namespacecfw500__modbus_1_1cfw500__modbus__node_a40157477392ccde01d8160406319c6a7} 
+cfw500\+\_\+modbus.\+cfw500\+\_\+modbus\+\_\+node.\+main (\begin{DoxyParamCaption}\item[{}]{args}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Main function to initialize and run the ROS node.
+\end{DoxyVerb}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \textcolor{keyword}{def\ }main(args=None):}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00093\ \textcolor{stringliteral}{\ \ \ \ Main\ function\ to\ initialize\ and\ run\ the\ ROS\ node.}}
+\DoxyCodeLine{00094\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00095\ \ \ \ \ rclpy.init(args=args)}
+\DoxyCodeLine{00096\ \ \ \ \ node\ =\ CFW500ModbusNode()}
+\DoxyCodeLine{00097\ \ \ \ \ rclpy.spin(node)\ \ \textcolor{comment}{\#\ Keep\ the\ node\ running}}
+\DoxyCodeLine{00098\ \ \ \ \ node.destroy()\ \ \textcolor{comment}{\#\ Clean\ up\ after\ exiting}}
+\DoxyCodeLine{00099\ \ \ \ \ rclpy.shutdown()\ \ \textcolor{comment}{\#\ Shut\ down\ the\ ROS\ client\ library}}
+\DoxyCodeLine{00100\ }
+
+\end{DoxyCode}
