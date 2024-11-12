@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/marcos/warthog_ws/install/warthog_control/lib/python3.10/site-packages",
+        "/home/marcos/warthog_ws/install/ros_ign_interfaces/local/lib/python3.10/dist-packages",
+        "/home/marcos/warthog_ws/install/ros_gz_interfaces/local/lib/python3.10/dist-packages",
+        "/home/marcos/warthog_ws/install/astra_camera_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/marcos/warthog_ws/install/warthog_control/lib/python3.10/site-packages",
+        "/home/marcos/warthog_ws/install/ros_ign_interfaces/local/lib/python3.10/dist-packages",
+        "/home/marcos/warthog_ws/install/ros_gz_interfaces/local/lib/python3.10/dist-packages",
+        "/home/marcos/warthog_ws/install/astra_camera_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
