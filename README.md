@@ -24,8 +24,7 @@
 
 
      cd ~/dev_ws/src
-     git clone https://github.com/yourusername/modbus_cfw500.git
-   
+     git clone https://github.com/MarcuSpade/cfw500_modbus.git
 ### Install dependencies:
 
 The package depends on rclpy, std_msgs, and pymodbus. You can install the necessary dependencies using:
@@ -36,7 +35,7 @@ And then install ROS 2 dependencies by building the workspace:
 
   
      cd ~/dev_ws/src
-     git clone https://github.com/yourusername/modbus_cfw500.git
+     git clone https://github.com/MarcuSpade/cfw500_modbus.git
 
 
 Source your workspace:
@@ -47,7 +46,8 @@ Source your workspace:
 
 After building and sourcing your workspace, you can launch the node using the provided launch file:
 
-ros2 launch modbus_cfw500 cfw500_launch.py
+     ros2 run cfw500_modbus cfw500_modbus_node 
+
 
 This will start the cfw500_modbus_node and begin publishing data to the following topics:
 
