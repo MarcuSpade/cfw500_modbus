@@ -27,10 +27,11 @@
      git clone https://github.com/MarcuSpade/cfw500_modbus.git
 ### Install dependencies:
 
-The package depends on rclpy, std_msgs, and pymodbus. You can install the necessary dependencies using:
+The package depends on `rclpy`, `std_msgs`, `pymodbus` and `pyserial`. You can install the necessary dependencies using:
 
-pip install pymodbus
-
+    pip install pymodbus
+    pip install pyserial
+    
 And then install ROS 2 dependencies by building the workspace:
 
   
