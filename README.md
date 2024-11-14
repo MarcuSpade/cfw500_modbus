@@ -36,7 +36,7 @@ And then install ROS 2 dependencies by building the workspace:
 
   
      cd ~/dev_ws/src
-     git clone https://github.com/MarcuSpade/cfw500_modbus.git
+     rosdep install --from-paths src --ignore-src -r -y
 
 
 Source your workspace:
