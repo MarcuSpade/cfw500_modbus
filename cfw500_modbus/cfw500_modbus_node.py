@@ -10,7 +10,7 @@ class CFW500ModbusNode(Node):
         # Set up Modbus RTU client configuration
         # Configures the Modbus client for communication with a device on /dev/ttyUSB0
         # using a baud rate of 9600 and a timeout of 1 second.
-        self.client = ModbusClient(port='/dev/ttyUSB0', baudrate=19200, timeout=1)
+        self.client = ModbusClient(port='/dev/ttyUSB0', baudrate=9600, timeout=1)
 
         # Attempt connection to the inverter device via Modbus
         if not self.client.connect():
@@ -41,7 +41,7 @@ class CFW500ModbusNode(Node):
             # Read frequency register (address P0005)
             response = self.client.read_holding_registers(5, 1)
             if not response.isError():
-                frequency = response.registers[0] / 100.0  # Scale adjustment
+                frequency = response.registers[0] / 10.0  # Scale adjustment
                 self.publish_data(self.freq_publisher, frequency, "Frequency")
             
             # Read output speed register (P0002, address 2)
@@ -53,13 +53,13 @@ class CFW500ModbusNode(Node):
             # Read motor current register (P0003, address 3)
             response = self.client.read_holding_registers(3, 1)
             if not response.isError():
-                motor_current = response.registers[0] / 100.0  # Scale adjustment
+                motor_current = response.registers[0] / 10.0  # Scale adjustment
                 self.publish_data(self.curr_publisher, motor_current, "Motor Current")
             
             # Read output voltage register (P0007, address 7)
             response = self.client.read_holding_registers(7, 1)
             if not response.isError():
-                output_voltage = response.registers[0] / 100.0  # Scale adjustment
+                output_voltage = response.registers[0] / 1.0  # Scale adjustment
                 self.publish_data(self.volt_publisher, output_voltage, "Output Voltage")
 
         except Exception as e:
